@@ -1,3 +1,10 @@
+navigator.serviceWorker.register('firebase-messaging-sw.js')
+.then(function(registration) {
+    firebase.messaging().useServiceWorker(registration);
+    console.log('Service Worker registrado');
+}).catch(function(err) {
+    console.error('Error al registrar el Service Worker', err);
+});
 
 var firebaseConfig = {
     apiKey: "AIzaSyD0Ho0FLYlOydziqhRRbNXVDZWRo0eBcpM",
